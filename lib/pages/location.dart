@@ -14,6 +14,7 @@ class _LocationState extends State<Location> {
     WorldTime(url: "Asia/Tokyo", location: 'Tokyo'),
     WorldTime(url: "America/Toronto", location: 'Toronto'),
     WorldTime(url: "Europe/Paris", location: 'Paris'),
+    WorldTime(url: "Pacific/Tahiti", location: 'Tahiti'),
   ];
 
   void updateTime(index) async {
@@ -42,11 +43,16 @@ class _LocationState extends State<Location> {
         itemCount: locations.length,
         itemBuilder: (context, index) {
           return Card(
+            color: Colors.grey[800],
             child: ListTile(
               onTap: () {
                 updateTime(index);
               },
-              title: Text(locations[index].location),
+              title: Text(locations[index].location,
+              style: TextStyle(
+                color: Colors.white,
+              ),
+              ),
             ),
           );
         }

@@ -23,13 +23,17 @@ class _LoaderState extends State<Loader> {
   // }
 
   void setupWorldTime() async {
-    WorldTime instance = WorldTime(location: 'Manila', url: 'Asia/Manila');
-    await instance.getTime();
-    Navigator.pushNamed(context, "/home", arguments: {
-      'location': instance.location,
-      'time': instance.time,
-      'DayTime': instance.DayTime,
-    });
+    try {
+      WorldTime instance = WorldTime(location: 'Manila', url: 'Asia/Manila');
+      await instance.getTime();
+      Navigator.pushNamed(context, "/home", arguments: {
+        'location': instance.location,
+        'time': instance.time,
+        'DayTime': instance.DayTime,
+      });
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override

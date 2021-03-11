@@ -17,7 +17,8 @@ class _HomeState extends State<Home> {
 
     // SET BACKGROUND - DAY OR NIGHT
     String bgImage = data['DayTime'] ? 'day.png' : 'night.png';
-    Color bgColor = data['DayTime'] ? Colors.blue : Colors.indigo[700];
+    Color bgColor = data['DayTime'] ? Colors.white : Colors.grey[750];
+    Color fontColor = data['DayTime'] ? Colors.grey[900] : Colors.white;
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -57,7 +58,7 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                           fontSize: 30.0,
                           letterSpacing: 2.0,
-                            color: Colors.grey[300],
+                            color: fontColor,
                         ),
                       ),
                     ],
@@ -67,7 +68,7 @@ class _HomeState extends State<Home> {
                     data['time'],
                     style: TextStyle(
                       fontSize: 70.0,
-                      color: Colors.grey[300],
+                      color: fontColor,
                     ),
                   ),
                 ],
